@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        // .............................VAR CONST LET..........................................
+
+        // var name = 'yash'
+        // console.log(name);    
+        // let name = 'ayush'
+        // console.log(name);
+        // const name = 'cake'
+        // console.log(name);  
+
+
+        // var name = 'yash'
+        // name = 'utkarsh'
+        // console.log(name);
+        // let name = 'yash'
+        // name = 'utkarsh'
+        // console.log(name);
+        // // cannot change const value
+        //  const name = 'yash'
+        //  name = 'utkarsh'
+        //  console.log(name);
+        
+        var keek = "plo"
+        let teek = "hello"
+        const seek = "bye"
+
+        function mycode(element){
+            if(element){
+                // const yname = "olly";
+                // let yname = "olly";
+                var yname = "olly";
+            }
+            // console.log(keek);
+            // console.log(teek);
+            // console.log(seek);
+            keek = "yes"
+            teek = "no"
+            // seek = "live"
+            console.log(keek);
+            console.log(teek);
+            // console.log(seek);
+            console.log(yname);
+        }
+
+        mycode(true)
+
+        var whowillwin = 'INDIA';
+
+        if(true){
+            var whowillwin='england'
+            console.log(whowillwin);
+        }
+        console.log(whowillwin);
+
+        // let whowillwin = 'INDIA';
+
+        //  if(true){
+        //     let whowillwin='england'
+        //     console.log(whowillwin);
+        //  }
+        //  console.log(whowillwin);
+
+        // const whowillwin = 'INDIA';
+
+        // if(true){
+        //     const whowillwin='england'
+        //     console.log(whowillwin);
+        // }
+        // console.log(whowillwin);
+
+        // .........................SPREAD OPERATOR...........................................
+        // Copying an array
+        let arr1 = [21,38,99];
+        let arr2 = [...arr1];
+        console.log(arr1);
+        console.log(arr2);
+        // Inserting elements of one array into others
+        let array1 = ["hello",'bye','lol'];
+        let array2 = ["okay", "Yay", "party", ...array1,"ins"];
+        console.log(array1); 
+        console.log(array2);
+        // Array to arguments
+        let numbers = [15 , -8, 2,9,71];
+        console.log(Math.max(...numbers));
+        // .............................ForEach and map..........................................
+        // Foreach
+        let days = ['mon', 'tues', 'wed', 'thurs', 'friday', 'saturday'];
+        days.forEach(function(day, index){
+            console.log("Hello everyone "+index + ' ' +day);
+        }) 
+        // map
+        let deserve = ["123", 546,78,2,99,78];
+        let namelengths =  deserve.map(function(item,index,array){
+            return item;
+        })
+        console.log(namelengths);
+        //................................while loop...............................................
+        let i = 1;
+        n = 5;
+        while(i<=10){
+           console.log(n + " * " + i + " = " + n*i);
+           i++;
+        }
+        // ...................................break...................................................
+        for (let index = 0; index < 10; index++) {
+            if(index ===4 ){
+                break;
+            }
+            console.log("The number is "+index);
+        }
+        // ......................................continue.............................................
+        for (let index = 0; index < 10; index++) {
+            if(index ===4 ){
+                continue;
+            }
+            console.log("The number is "+index);
+
+        }
+        // .......................................replace yash with ......................................
+        let line = "My name is yash,yash is";
+        let newline = line.replaceAll('yash','Yash the developer');
+        console.log(newline);
+        // ..........................count occurence of a letter.......................................
+        let str = "yash is a software enginer intern";
+        let count = 0
+        for (let index = 0; index < str.length; index++) {
+            if(str.charAt(index)==='a'){
+                count++;
+            }     
+        }
+        console.log(count);
+        // .......................................slice and splice............................................
+        var users = ['ton','on','kon','lol','non']
+        console.log(users.slice(1,4));
+        console.log(users.slice(2));
+
+        var newUsers = ["opi",'koll','jop','aop','fpo','rkp']
+        newUsers.splice(3,2,'mum');
+        console.log(newUsers);
+        // .........................................replace second...............................................
+        let strnew = 'and is the and but not and' 
+        var t=0;   
+        strnew = strnew.replace(/and/g, function (match) {
+        t++;
+        return (t === 2) ? "Z" : match;
+        });
+        console.log(strnew);
+        // .........................................do-while...................................................
+        var a=6;
+        do{
+            console.log(a);
+            a++;
+        }while (a<=5) 
+        var b = 6;
+        while (b<=5) {
+            console.log(b);
+            b++;
+        }
+        // .........................................................................................................
+        var statement = 'you should know yash is not yash but yash is yash';
+        var search = statement.split(" ");
+        console.log(search);
+        let pcount = 0
+        for (let i = 0; i < search.length; i++) {
+            if(search[i].localeCompare('yash')===0){
+                pcount++;
+            }
+            if(pcount === 2){
+                search[i]="okay";
+                break;
+            }
+
+        }
+
+        let opie = search.toString();
+        opie = opie.replaceAll(',', ' ');
+        console.log(opie);
+      
+
+
+
+    </script>
+</body>
+</html>

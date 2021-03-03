@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML AND CSS EXERCISE</title> 
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .best{
+            margin-top: 30px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: 2rem;
+            /* text-align: justify; */
+        }
+        p{
+            font-size: 1.5rem;
+            width: 1500px;
+            margin: 0 auto;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="margin-left: 630px;">
+        <div>
+            <form id="form" class="form">
+                <h2>Register With Us</h2>
+                <p id="errorMessage"></p>
+                <div class="form-control">
+                    <label>First Name<sup style="color: red">*</sup></label>
+                    <input type="text" id="firstName" placeholder="Enter First Name">  
+                    <small class="errorText" id="smallFname"></small>  
+                </div>
+                <div class="form-control">
+                    <label>Last Name<sup style="color: red">*</sup></label>
+                    <input type="text" id="lastName" placeholder="Enter Last Name">
+                    <small class="errorText" id="smallLname"></small>  
+                </div>
+                <div class="form-control">
+                    <label>Mobile Number<sup style="color: red">*</sup></label>
+                    <input type="number" id="mobile" placeholder="Enter Mobile Number">
+                    <small class="errorText" id="smallNumber"></small>  
+                </div>
+                <div class="form-control">
+                    <label>Age<sup style="color: red">*</sup></label>
+                    <input type="text" id="age" placeholder="Enter Age">
+                    <small class="errorText" id="smallAge"></small>  
+                </div>
+                <div class="form-control">
+                    <label for="gender">Gender:<sup style="color: red">*</sup></label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br><br>
+                <small class="errorText" id="smallGender"></small>  
+                </div>
+
+                <div class="form-control">
+                    <label>Email<sup style="color: red">*</sup></label>
+                    <input type="email" id="email" placeholder="Enter Email">
+                    <small class="errorText" id="smallEmail"></small>  
+                </div>
+                <div class="form-control">
+                    <label>Address<sup style="color: red">*</sup></label>
+                    <input type="text" id="address" placeholder="Enter Address">
+                    <small class="errorText" id="smallAdd"></small>  
+                </div>
+                <div class="form-control">
+                    <label>Password<sup style="color: red">*</sup></label>
+                    <input id="password" type="password"   placeholder="Enter Password">
+                    <small class="errorText" id="smallPass"></small>
+                </div>
+                <button type="button" onclick="register()" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+  
+    <script>
+        
+         
+
+        function register() {
+            var errorMessage = [];
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var age = document.getElementById("age").value;
+            var mobile = document.getElementById("mobile").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById('email').value;
+            var gender = document.getElementById('gender').value;
+            var address = document.getElementById('address').value; 
+            var form = document.getElementById('form');
+            var smallFname = document.getElementById('smallFname');
+            var smallLname = document.getElementById('smallLname');
+            var smallNumber = document.getElementById('smallNumber');
+            var smallAge = document.getElementById('smallAge');
+            var smallGender = document.getElementById('smallGender');
+            var smallEmail = document.getElementById('smallEmail');
+            var smallAdd = document.getElementById('smallAdd');
+            var smallPass = document.getElementById('smallPass');
+            var errorMsg = document.getElementById('errorMessage');
+            var errorText = document.getElementsByClassName('errorText');
+
+            // firstName Check
+            if(firstName === ''){
+                errorMessage.push({
+                    key: 'First Name',
+                    value: 'First name field is mandatory'
+                });
+                // console.log(smallFname);
+                // smallFname.innerText = "Firstname field is mandatory";
+                
+            }
+
+            // lastName Check
+            if(firstName === ''){
+                errorMessage.push( {
+                  key:'Last Name',
+                  value:'Last name field is mandatory'  
+                } );
+                // smallLname.innerText = 'Lastname field is mandatory';
+            }
+
+            // Age Checks
+            if(age===''){
+                errorMessage.push( {
+                  key:'Age',
+                  value:'Age field is mandatory'  
+                } );
+                // smallAge.innerText = 'Age field is mandatory';
+                // errorMessage.push("Age field is mandatory");
+            }
+            if (isNaN(age))
+            { 
+                errorMessage.push( {
+                  key:'Age',
+                  value:'Age must be a number'  
+                });
+                // alert("Age must be a number");
+                // errorMessage.push("Age must be a number");
+            }
+            if(age < 18 || age > 99) {
+                errorMessage.push( {
+                  key:'Age',
+                  value:'Age must be between 18 and 99'  
+                });
+                // alert("Age must be between 18 and 99")
+                // errorMessage.push("Age must be between 18 and 99");
+            }
+            
+            // Password Checks
+            if(password === ''){
+                errorMessage.push( {
+                  key:'Password',
+                  value:'Password field is mandatory'  
+                });
+                // errorMessage.push('Password field is mandatory');
+                // smallPass.innerText = 'Passowrd field is mandatory';
+            }
+            if(password.length <4 ){
+                errorMessage.push( {
+                  key:'Password',
+                  value:'Password must be greater than 4'  
+                });
+                // errorMessage.push("Password must be greater than 4");
+                
+            }else if(password.length>8){
+                errorMessage.push( {
+                  key:'Password',
+                  value:'Password must be less than 8'  
+                });
+                // alert("Password Must be less than 8")
+                // errorMessage.push("Password must be less than 8");
+            }
+            
+            // Mobile Number Checks
+            if(mobile === ''){
+                errorMessage.push( {
+                  key:'Mobile Number',
+                  value:'Mobile number field is mandatory'  
+                });
+                // errorMessage.push('Mobile number field is mandatory');
+                // smallNumber.innerText = 'Mobile number field is mandatory'
+            }
+            if(isNaN(mobile)){
+                errorMessage.push( {
+                  key:'Mobile Number',
+                  value:'Mobile number should be in numbers'  
+                });
+                // errorMessage.push("Mobile Number should be number");
+            }
+            if(mobile.length !== 10 ){
+                errorMessage.push( {
+                  key:'Mobile Number',
+                  value:'Mobile number should be 10 digits'  
+                });
+                // errorMessage.push("Mobile number Should be 10 digits");
+            }
+
+            // Email Check
+            if(email === ''){
+                errorMessage.push( {
+                  key:'Email',
+                  value:'Email field is mandatory'  
+                });
+                // errorMessage.push('Email field is mandatory');
+                // smallEmail.innerText = 'Email field is mandatory';
+            }
+
+            // Gender Check
+            if(gender === ''){
+                errorMessage.push( {
+                  key:'Gender',
+                  value:'Gender field is mandatory'  
+                });
+                // errorMessage.push('Gender field is mandatory');
+                // smallGender.innerText = 'Gender field is mandatory';
+
+            }
+            
+            // Address Check
+            if(address === ''){
+                errorMessage.push( {
+                  key:'Address',
+                  value:'Address field is mandatory'  
+                });
+                
+                // errorMessage.push('Address field is mandatory');
+                // smallAdd.innerText = 'Address field is mandatory';
+            }
+            
+            
+            for (let index = 0; index < errorMessage.length; index++) {
+                if(errorMessage[index].key === 'Password'){
+                    smallPass.innerHTML +=   errorMessage[index].value + "<br />"
+                }
+                if(errorMessage[index].key === 'Address'){
+                    console.log(errorMessage[index].value);
+                    smallAdd.innerHTML += errorMessage[index].value +"<br />";
+                }
+                if(errorMessage[index].key === 'Gender'){
+                    console.log(errorMessage[index].value);
+                    smallGender.innerHTML += errorMessage[index].value +"<br />";
+                }
+                if(errorMessage[index].key === 'Email'){
+                    console.log(errorMessage[index].value);
+                    smallEmail.innerHTML += errorMessage[index].value + "<br />" ;
+                }
+                if(errorMessage[index].key === 'Mobile Number'){
+                    console.log(errorMessage[index].value);
+                    smallNumber.innerHTML += errorMessage[index].value +"<br />";
+                }
+                if(errorMessage[index].key === 'Age'){
+                    console.log(errorMessage[index].value);
+                    smallAge.innerHTML += errorMessage[index].value +"<br />";
+                }
+                if(errorMessage[index].key === 'First Name'){
+                    console.log(errorMessage[index].value);
+                    smallFname.innerHTML += errorMessage[index].value +"<br />";
+                }
+                if(errorMessage[index].key === 'Last Name'){
+                    console.log(errorMessage[index].value);
+                    smallLname.innerHTML += errorMessage[index].value +"<br />";
+                }
+                
+                // if(errorMessage[index].key)
+            } 
+
+            var postData = {
+                firstName: firstName,
+                lastName: lastName,
+                name: firstName + ' ' + lastName,
+                age: age,
+                mobile: mobile,
+                email:email,
+                gender: gender,
+                password: password,
+                address:address
+            };
+            console.log(postData);
+            console.log(errorMessage);
+            if(errorMessage.length === 0){
+                form.reset();
+                errorMsg.innerText = '';
+                errorText.innerHTML = '';
+            }else{
+                errorMsg.innerText = errorMessage.length + ' errors found'; 
+            }
+           
+        
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    <script>
+        // ..................................................ARRAYS.............................................................
+        // var characters = ['Luke', 'Leia','Han','Chewie'];
+        // LENGTH
+        // console.log(characters.length);
+        // PUSH
+        // characters.push('jimmy');
+        // characters.push('james');
+        // console.log(characters);
+        // POP
+        // characters.pop();
+        // characters.pop();
+        // console.log(characters);
+        // ........UNSHIFT
+        // characters.unshift('jimmy');
+        // characters.unshift('james');
+        // console.log(characters);
+        // ........SHIFT
+        // characters.shift();
+        // characters.shift();
+        // console.log(characters);
+        // ........SPLICE
+        // characters.splice(0,1,'rey');
+        // console.log(characters);
+        // characters.splice(1,2,'kylo');
+        // console.log(characters);
+        // characters.splice(1,1,'C3PO','R2D2')
+        // console.log(characters);
+        // characters.splice(1,2);
+        // console.log(characters);
+        // characters.push('num');
+        // characters.push('obliwan');
+        // console.log(characters);
+        // .........REVERSE -reverse order of elements
+        // characters.reverse();
+        // console.log(characters);
+        // .........SORT() - sorts in alphabetical order
+        // characters.sort();
+        // console.log(characters);
+        // .........INDEXOF - returns index of and -1 if not present
+        // let position = characters.indexOf('obliwan');
+        // console.log(position);
+        // position = characters.indexOf('ooho');
+        // console.log(position);
+        // .........LASTINDEXOF -  do the same thing as indexOf but its start from the end so if you have 2 elements it will give the position of the second one
+        // .........FOR LOOP
+        // var names = ['yash','utkarsh','pranshu','arpit','parth','khushi','suhani','sanvi'];
+        // nameLength = names.length;
+        // for (let i = 0; i < nameLength; i++) {
+        //     console.log(names[i]);
+        // }
+        // console.log('reversed list');
+        // for(let i = nameLength-1; i>=0; i--){
+        //     console.log(names[i]);
+        // }
+        // .........ARRAY OF OBJECTS
+        // var dog = {name: 'Calvin', type: 'dog'};
+        // var cat = {name: 'Hepburn', type: 'cat'}
+        // var animals = ['Calvin','Hepburn'];
+        // console.log(dog);
+        // console.log(cat);
+        // console.log(animals);
+        // var pets = [dog,cat];
+        // console.log(pets);
+        // pets.push({name: 'sephora', type: 'cat'})
+        // console.log(pets);
+        // cat.age = 2;
+        // dog.age = 7;
+        // pets[2].age = 5
+        // console.log(pets);
+        // pets[1].age = 4;
+        // pets[1].hungry = true;
+        // console.log(pets);
+        // console.log(cat);
+        // .........FOR IN LOOP
+        // var greetings = {India: 'Namaste',Spain: 'Hola',France: 'Bonjour'};
+        // console.log(greetings);
+        // var in object prop will give key and greetings[prop] will give value
+        // for(var prop in greetings){
+        //     console.log('In ' + prop + ' we have ' + greetings[prop]);
+        // }
+        // in array prop becomes the index (0,1,2) and arr[prop] becomes the value
+        // var array = ['bunny','hunny','lunny'];
+        // for(var index in array){
+        //     console.log('At ' + index + ' we have ' + array[index]);
+        // }
+        // ........FOREACH LOOP - calls function one time fogr each element
+        // var cplayers = ['Sachin','Rohit','Virat','Rahul','Hardik','Dravid','Raina','Yuvraj','Dhoni','Pant','Shaw','Bumrah'];
+        // cplayers.forEach(output);
+        // function output(item,index,array){
+        //     console.log(index,item);
+        // }
+        // cplayers.forEach(function(item,index,array){
+        //     if(item === 'Rahul'){
+        //         item = item.toUpperCase();
+        //     }else{
+        //         item = item.toLowerCase();
+        //     }
+        //     console.log(index,item);
+        // })
+        // NESTED LOOPS
+        // let twoD = [[1,2,3,4,5,6,7],
+        // [8,10,5,73,22,6,42],[123,54,12,11,9,15]];
+
+        // let bigHero = {characters:[
+        //     {name: 'Hiro', voice : 'harry potter' },
+        //     {name: 'ram', voice : 'kiyt' },
+        //     {name: 'minal', voice : 'josh' },
+        //     {name: 'katie', voice : 'meg' },
+        // ]}
+        // for(i=0; i<twoD.length;i++){
+        //     for(j=0; j<twoD[i].length;j++){
+        //         console.log(twoD[i][j]);
+        //     }
+        // }
+
+        // for(var prop in bigHero){
+        //     for(index = 0; index<bigHero[prop].length;i++){
+        //         console.log(index.name);
+        //     }
+        // }
+
+    //    let chars = bigHero.characters;
+    //     for(i=0, len= chars.length; i<len; i++){ 
+            // console.log(chars[i]);
+            // console.log(chars[i].name);
+            // console.log(chars[i].voice);
+        //     for(let prop in chars[i]){
+        //         console.log(prop, chars[i][prop]);
+        //     }
+
+        // }
+
+        // MAP - same as foreach but the difference is map() will return an array ...foreach changes the original array
+        // let words = ['kjdkjd','csjb','cskkjsgcjag','skjhcjkhc','csjhgcahjchgadchkadgck','c','ccsccscscsc','','cshabbcksbkaskbasc','cssacsa'];
+        // let wordsLength = words.map(function(item,index,array){
+        //     let len = item.length;
+        //     return len;
+        // })
+        // console.log(wordsLength);
+
+        // CONCAT
+        // let a = [76,8,95,2];
+        // let b = [12,83,9,26];
+        // let c = a.concat(b);
+        // let d = b.concat(a);
+        // let e = [].concat(a,b);
+        // console.log(c);
+        // console.log(d);
+        // console.log(e);
+
+        // SPLIT- string to array AND JOIN- array to string
+        // let sentence = 'hi my name is yash';
+        // let words = sentence.split(' ');
+        // console.log(words);
+        // let chars = sentence.split('name');
+        // console.log(chars);
+        // let str = words.join('-');
+        // console.log(str);
+
+        // EVERY
+        // let numbers = [49,14,6,78,95,23,34,22,66];
+        // let twodiv = numbers.every(function(num){
+        //     return num%2===0;
+        // })
+
+        // console.log(twodiv);
+        // let greaterThan2 = numbers.every(function(num){
+        //     return num>2;
+        // })
+        // console.log(greaterThan2);
+
+        // SOME - runs untill its true
+        
+        // INCLUDES
+        // let fruits = ['orange','grapes','apple','banana','pear'];
+        // let fruit1 = 'apple';
+        // let fruit2 = 'pear';
+        // let fruit3 = 'cherry';
+
+        // let hasFruit = fruits.includes(fruit1);
+        // let hasCherry = fruits.includes(fruit3);
+        // console.log('contains apple ', hasFruit);    
+        // console.log('contains cheery ', hasCherry);
+
+        // FILTER
+        let numbers = [25,76,94,2,65,86,45,51,16];
+        let smallNumbers = numbers.filter(function(num){
+            return num<30;
+        })
+        let largeNumbers = numbers.filter(function(num){
+            return num>30;
+        })
+        let oddNumbers = numbers.filter(function(num){
+            return num%2==0;
+        })
+
+        console.log(smallNumbers);
+        console.log(largeNumbers);
+        console.log(oddNumbers);
+        // FIND
+        let twofive = numbers.find(function(item){
+            return item>80
+        })
+        console.log(twofive);
+    </script>
+</body>
+</html>

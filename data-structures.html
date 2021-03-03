@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick='handler()'>click me</button>    
+    <a href="JavaScript:void(0);" onclick="alert('Well done!')">Click Me!</a>
+    <script>
+        // ...........................................arrays...................................................
+        // const names =['Max','Manu','Jolly','Max'];
+        // // console.log(names.length);
+        // for(const el of names){
+        //     // console.log(el);
+        // }
+        // names.push('Manu');
+        // // console.log(names.length);
+        // const jollyIndex =  names.findIndex(el => el ==="Jolly");
+        // // console.log(jollyIndex);
+        // names.splice(1,1);
+        // // console.log(names);
+        
+        // // Insertion
+        // function insertItem(index,element){
+        //     for (var i = names.length; i > index; i--) {
+        //         names[i]=names[i-1];
+        //     }
+        //     names[i] = element;
+        //     console.log(names);       
+        // }
+        // insertItem(1,5);
+        // console.log(names.length);
+        
+        // // Deletion
+        // function deleteItem(index){
+        //     let x = names[index];
+        //     for (let i = index; i < names.length-1; i++) {
+        //         names[i] = names[i+1];
+        //     }
+        //     names.length--;
+        //     console.log(names);
+        // }
+        // deleteItem(1);
+        // console.log(names.length);
+        
+        
+        // // Search
+        // let newelements = [2,6,8,99,45,13,36,41];
+        // function lSearch(){
+        //     let key = 0; 
+        //     for (let i = 0; i < newelements.length; i++) {
+        //         if(key===newelements[i]){
+        //             console.log(i);;
+        //         }
+        //     }
+        // }
+        // lSearch();
+
+    // ...........................................Set.......................................................
+    const ids = new Set();
+    ids.add('ssg');
+    ids.add(1);
+    ids.add('abc');
+    ids.add(56);
+    ids.add(1);
+
+    for(const el of ids){
+        console.log(el);
+    }
+    // console.log(ids[1]); // undefined 
+
+    console.log(ids.has('abc'));
+    ids.delete(1);
+    console.log(ids);
+
+    // ................................................Objects..................................................
+    let obj ={ firstName: 'Paul', age: 31,hobbies: ['Sports','Cooking'], greet() {
+        console.log('Hi, I am ' + obj.firstName);
+    },  
+    }   
+    console.log(obj.age);
+
+    obj.lastName = 'kenny';
+    console.log(obj);
+    console.log(obj.greet());
+
+    // ....................................................Maps........................................................
+    const resultData = new Map()
+
+    resultData.set('average',2.59);
+    resultData.set('lastResult',null);
+    const germany = {name: "Germany", capital: "Berlin"}
+    resultData.set(germany,1.36);
+   for(const el of resultData){
+       console.log(el);
+   }
+
+  
+    // ....................................................Question 1..............................................
+    var items = [1,2,4,5,10,6,3];
+    let filteredItems = items.filter((value) =>{
+        if(value%2!==0){
+            return value;
+        }
+    })
+    returnArray = () => {
+         for (let i = 0; i < items.length; i++) {
+           if(items[i] === 2){
+             return items;
+           }else {
+             return "error in array";
+           }
+         }    
+    }
+
+    console.log(returnArray());
+  
+    console.log(filteredItems);
+    // ..................................................Question 2.............................................
+    var opp = [[
+    {
+      name: 'Yash',
+      company: 'SG',
+      solution: {
+        x1: 12,
+        x2: 'Ramesh',
+        x3: [
+          {
+            x: 'I am here. you got me',
+          }
+        ]
+      }
+        }
+    ] 
+    ]
+    // console.log(opp[0][0].solution.x3[0].x);
+    // // opp[0][0].solution.x3[0].x = {
+    // //     y:'I got you'
+    // // }
+    // console.log( opp[0][0].solution.x3[0].y="I got you");
+    // console.log(opp);
+    // console.log( opp[0][0].solution.x3.push({z:'I am new here'}));
+    // console.log(opp);
+    var a = opp[0][0].solution.x3[0].x.slice(0,10);
+    var b = opp[0][0].solution.x3[0].x.slice(11,21);
+    var ll = { a,b};
+    console.log(ll);
+    var hh = opp[0][0].solution.x3[0].x;
+    var gg = hh.split('.');
+    console.log(gg);
+    var object = {key1 : gg[0], key2: gg[1]};
+    console.log(object);
+
+    var num = " yash kulshrestha"
+    num = num.trim();
+    num =num.split(' ');
+    var object2 = {k1: num[0], k2: num[1]};
+    console.log(object2);
+
+    // array concat
+    var array1 = ['jai','kai','hai','mai'];
+    var array2 = ['yash','sagar','vandit','divyansh'];
+    array3 = array1.concat(array2);
+    console.log(array3);
+
+    // array slice
+    array1 = array1.slice(2);
+    console.log(array1);
+    // splice
+    array2.splice(3,1,'upanshu','archit','nitin');
+    console.log(array2);
+
+    // first class function
+    // let handler = () => console.log('I am first class function');
+    document.addEventListener('click',handler);
+
+    // first order function
+    let firstOrder = () => console.log('I am first Order function');
+    firstOrder();
+
+    // higher order function
+    const firstOrderFunc = () => console.log ('Hello I am a First order function');
+    const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc ();
+    higherOrder (firstOrderFunc);
+   
+    // unary function
+    function unaryFunc(a){
+      console.log(a+10);
+    }
+    unaryFunc(124);
+    
+    // let vs var
+    var counter = 30 ; 
+    if(counter===30){
+      var counter = 31;
+      console.log(counter);
+    }
+    console.log(counter);
+
+    // temporal dead zone
+    // console.log(counter1);
+    console.log(counter2);
+    let counter1 = 1;
+    var counter2 = 1;
+
+    // IIFE (Immediately invoked function expression)
+    (function ()
+        {
+          var message = "IIFE";
+          console.log(message);
+        }
+    )
+    ();
+    // console.log(message);
+ 
+    // hoisted
+    //     var message;
+    // console.log(message);
+    // message = 'The variable Has been hoisted';
+
+    console.log(message); //output : undefined
+    var message = 'The variable Has been hoisted';
+
+    // !!
+
+    // delete operator
+    var ok= {name: 'yash',id: 124};
+    delete ok.name;
+    console.log(ok);
+
+    // typeof
+    console.log(typeof(ok.id));
+
+    let uol = null;
+    console.log(typeof(uol));
+
+    // console.log(eval('kas + shu'));
+    console.log(eval('1 + 2')); //  3
+
+    // isNaN
+    console.log(isNaN('Hello'));
+    console.log(isNaN(35));
+
+    console.log(isFinite(-Infinity));
+    console.log(isFinite(+Infinity));
+    console.log(isFinite(isNaN));
+    console.log(isFinite(765));
+    
+    // setTimeout
+    setTimeout(function(){ console.log("Good morning"); }, 2000);
+    
+    // setInterval
+    // setInterval(function(){ console.log("Good morning"); }, 2000);
+
+
+  </script>
+</body>
+</html>
+<!-- 
+// ........................................remove array elements.............................................

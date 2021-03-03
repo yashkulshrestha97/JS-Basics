@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let array = ['Orange','banana','apple','potato','strawberry'];
+        newarray = array.filter(item => item !== 'potato');
+        console.log(newarray);
+        
+        olly = () => {
+            for (let i = 0; i < 10; i++) {
+                var u = 'yash';
+                console.log(i);
+            }
+            console.log(u);
+        }
+       
+        olly();
+
+        let words = ['a','b','c','d']
+        let hello = words.join('');
+        console.log(hello);
+        let lemons = [{
+            x: 'Orange',
+            y: 'fruit'
+        },{
+            x: 'Banana',
+            y: 'fruit'
+        },{
+            x: 'apple',
+            y: 'fruit'
+        },{
+            x: 'potato',
+            y: 'vegetable'
+        },{
+            x: 'strawberry',
+            y: 'fruit'
+        }];
+
+        // newLemon = lemons.filter(function(ele){
+        //     return ele.y === 'fruit'
+        // })
+
+        // console.log(newLemon);
+
+        // const index =  lemons.findIndex(el => el.y !=="fruit");
+        //      // function deleteItem(index){
+        // //     let x = names[index];
+        // //      for (let i = index; i < names.length-1; i++) {
+        // //          names[i] = names[i+1];
+        // //      }
+        // //      names.length--;
+        // //      console.log(names);
+        // //  }
+        // //  deleteItem(1);
+        // let newLemons = lemons.slice(index,index+1);
+        // console.log(newLemons);
+        
+        let newar = []
+        for (let i = 0; i < lemons.length; i++) {
+            if(lemons[i].y==='fruit'){
+                  newar.push(lemons[i].x);
+            }
+        }
+
+        console.log(newar);
+
+        
+    //    let newLemons = lemons.map(lemon=> {
+    //        if(lemon.y==='fruit'){
+    //            return lemon.x;
+    //        }
+    //    });
+    //    console.log(newLemons);
+       
+
+    </script>
+</body>
+</html>
